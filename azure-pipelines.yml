@@ -12,12 +12,10 @@ pool:
 variables:
   buildConfiguration: 'Release'
 
-- task: oc-cmd@2
+- task: oc-setup@2
   inputs:
     openshiftService: 'OCP4'
     version: '4.4.0'
-    cmd: 'oc version'
-    uselocalOc: true
 
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
